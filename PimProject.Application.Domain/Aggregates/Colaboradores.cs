@@ -9,5 +9,6 @@ namespace PimProject.Application.Domain.Aggregates
 {
     public class Colaboradores : Entity
     {
+        public string Name { get; set; }
     }
 }
