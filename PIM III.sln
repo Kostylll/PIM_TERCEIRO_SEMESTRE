@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PimProject.Forms", "PIM III\PimProject.Forms.csproj", "{32BF8583-50CC-4D39-BCF7-57C0E393A97E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PimProject.Application", "PimProject.Application\PimProject.Application.csproj", "{1B59D1B0-119C-4515-B5A3-660133315185}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PimProject.Application.Abstraction", "PimProject.Application.Abstraction\PimProject.Application.Abstraction.csproj", "{4BEF1586-03C1-498C-8885-4B3F453B7DEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PimProject.Application.Domain", "PimProject.Application.Domain\PimProject.Application.Domain.csproj", "{E243F62A-1CC7-4EE1-A1A7-25F7FF0FB0AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PimProject.Application.Infra.Data", "PimProject.Application.Infra.Data\PimProject.Application.Infra.Data.csproj", "{99579440-DB30-4746-85D3-00299FDCBA46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PimAPI", "PimAPI\PimAPI.csproj", "{EC97C37C-8BFB-491E-B81F-88035C19E12C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32BF8583-50CC-4D39-BCF7-57C0E393A97E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BF8583-50CC-4D39-BCF7-57C0E393A97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BF8583-50CC-4D39-BCF7-57C0E393A97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BF8583-50CC-4D39-BCF7-57C0E393A97E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B59D1B0-119C-4515-B5A3-660133315185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B59D1B0-119C-4515-B5A3-660133315185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B59D1B0-119C-4515-B5A3-660133315185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B59D1B0-119C-4515-B5A3-660133315185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BEF1586-03C1-498C-8885-4B3F453B7DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BEF1586-03C1-498C-8885-4B3F453B7DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BEF1586-03C1-498C-8885-4B3F453B7DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BEF1586-03C1-498C-8885-4B3F453B7DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E243F62A-1CC7-4EE1-A1A7-25F7FF0FB0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E243F62A-1CC7-4EE1-A1A7-25F7FF0FB0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E243F62A-1CC7-4EE1-A1A7-25F7FF0FB0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E243F62A-1CC7-4EE1-A1A7-25F7FF0FB0AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99579440-DB30-4746-85D3-00299FDCBA46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99579440-DB30-4746-85D3-00299FDCBA46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99579440-DB30-4746-85D3-00299FDCBA46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99579440-DB30-4746-85D3-00299FDCBA46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC97C37C-8BFB-491E-B81F-88035C19E12C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC97C37C-8BFB-491E-B81F-88035C19E12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC97C37C-8BFB-491E-B81F-88035C19E12C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC97C37C-8BFB-491E-B81F-88035C19E12C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CECC997-5110-41B3-A3D6-65037752F962}
+	EndGlobalSection
+EndGlobal
