@@ -20,4 +20,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PimProject.Application.Infra.Data\PimProject.Application.Infra.Data.csproj" />
+    <ProjectReference Include="..\PimProject.Application\PimProject.Application.csproj" />
+  </ItemGroup>
+
 </Project>

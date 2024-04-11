@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PimProject.Application.Domain\PimProject.Application.Domain.csproj" />
+    <ProjectReference Include="..\PimProject.Application.Infra.Data\PimProject.Application.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
