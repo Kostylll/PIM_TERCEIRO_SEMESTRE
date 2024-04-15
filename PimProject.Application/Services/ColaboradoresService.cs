@@ -46,6 +46,63 @@ namespace PimProject.Application.Services
             return true;
         }
 
+        public async Task<List<ColaboradoresResponse>> ExibirColaboradores()
+        {
+            var colaboradorViewList = new List<ColaboradoresResponse>();
+            var colab = await _colRepository.GetAllAsync();
+
+            foreach(var colabs in colab)
+            {
+                var colabViewModel = new ColaboradoresResponse();
+
+                colabViewModel.Nome = colabs.Nome;
+                colabViewModel.Sobrenome = colabs.Sobrenome;
+                colabViewModel.Data_Nascimento = colabs.Data_Nascimento;
+                colabViewModel.CPF = colabs.CPF;
+                colabViewModel.Email = colabs.Email;
+
+               colaboradorViewList.Add(colabViewModel);
+
+            }
+            return colaboradorViewList;
+        }
+
+        public async Task<bool> RemoverColaborador(string id)
+        {
+           var colabId = await _colRepository.GetByIdAsync(id);
+           _colRepository.Delete(colabId); 
+            await _colRepository.SaveChangesAsync();    
+            return true;
+
+        }
+
+
+        public async Task<ColaboradoresResponse> AtualizarColaborador (ColaboradoresResponse response, string id)
+        {
+            var colab = await _colRepository.GetByIdAsync(id);
+
+            if(colab != null)
+            {
+                colab.Nome = response.Nome;
+                colab.Sobrenome = response.Sobrenome;
+                colab.Data_Nascimento = response.Data_Nascimento;
+                colab.CPF  = response.CPF;
+                colab.Email = response.Email;
+
+                  _colRepository.Update(colab);
+                  await _colRepository.SaveChangesAsync();
+
+            }
+
+            else
+            {
+                return null;
+            }
+
+            return response;
+
+
+        }
 
     }
 }

@@ -11,7 +11,11 @@ namespace PimProject.Application.Domain.Interface
     {
         Task<bool> AdicionarColaborador(ColaboradoresResponse response);
 
+        Task<bool> RemoverColaborador(string id);
 
+        Task<ColaboradoresResponse> AtualizarColaborador(ColaboradoresResponse response, string id);
+
+        Task<List<ColaboradoresResponse>> ExibirColaboradores();
 
     }
 }
