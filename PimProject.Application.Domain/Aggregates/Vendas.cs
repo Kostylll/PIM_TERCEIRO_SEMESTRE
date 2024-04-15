@@ -9,5 +9,7 @@ namespace PimProject.Application.Domain.Aggregates
 {
     public class Vendas : Entity
     {
+        public string valor_venda {  get; set; }
+
     }
 }
