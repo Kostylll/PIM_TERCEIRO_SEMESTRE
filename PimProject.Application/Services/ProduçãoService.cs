@@ -20,15 +20,15 @@ namespace PimProject.Application.Services
         {
         }
 
-        public ProduçãoRepository(IProduçãoRepository proRepository, PimProjectDbContext context)
+        public ProduçãoService(IProduçãoRepository proRepository, PimProjectDbContext context)
         {
             _context = context;
             _proRepository = proRepository;
         }
 
-        public async Task<bool> AdicionarProdução(ProduçãoResponse response)
+        public async Task<bool> AdicionarProdução(ProducoesResponse response)
         {
-            var prod = new Vendas()
+            var prod = new Produção()
             {
                 produto_pro = response.produto_pro,
             };
@@ -41,14 +41,14 @@ namespace PimProject.Application.Services
             return true;
         }
 
-        public async Task<List<VendasResponse>> ExibirProdução()
+        public async Task<List<ProducoesResponse>> ExibirProdução()
         {
-            var produViewList = new List<ProduçãoResponse>();
+            var produViewList = new List<ProducoesResponse>();
             var prod = await _proRepository.GetAllAsync();
 
             foreach (var prods in prod)
             {
-                var prodViewModel = new VendasResponse();
+                var prodViewModel = new ProducoesResponse();
 
                 prodViewModel.produto_pro = prods.produto_pro;
 
@@ -68,7 +68,7 @@ namespace PimProject.Application.Services
         }
 
 
-        public async Task<ProduçãoResponse> AtualizarVenda(ProduçãoResponse response, string id)
+        public async Task<ProducoesResponse> AtualizarProdução(ProducoesResponse response, string id)
         {
             var prod = await _proRepository.GetByIdAsync(id);
 

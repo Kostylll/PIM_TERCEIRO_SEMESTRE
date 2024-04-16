@@ -9,12 +9,12 @@ namespace PimProject.Application.Domain.Interface
 {
     public interface IProduçãoServices
     {
-        Task<bool> AdicionarProducao(ProducoesResponse response);
+        Task<bool> AdicionarProdução(ProducoesResponse response);
 
-        Task<bool> RemoverProducao(string id);
+        Task<bool> RemoverProdução(string id);
 
-        Task<ProducoesResponse> AtualizarProducao(ProducoesResponse response, string id);
+        Task<ProducoesResponse> AtualizarProdução(ProducoesResponse response, string id);
 
-        Task<List<ProducoesResponse>> ExibirProducoes();
+        Task<List<ProducoesResponse>> ExibirProdução();
     }
 }

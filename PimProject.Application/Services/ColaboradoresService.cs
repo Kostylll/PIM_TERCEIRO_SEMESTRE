@@ -30,11 +30,11 @@ namespace PimProject.Application.Services
         {
             var colab = new Colaboradores()
             {
-                nome = response.nome,
-                sobrenome = response.sobrenome,
-                email = response.email,
-                data_nascimento = response.data_nascimento,
-                cpf = response.cpf,
+                Nome = response.Nome,
+                Sobrenome = response.Sobrenome,
+                Email = response.Email,
+                Data_Nascimento = response.Data_Nascimento,
+                CPF = response.CPF,
 
             };
 
@@ -55,11 +55,11 @@ namespace PimProject.Application.Services
             {
                 var colabViewModel = new ColaboradoresResponse();
 
-                colabViewModel.nome = colabs.nome;
-                colabViewModel.sobrenome = colabs.sobrenome;
-                colabViewModel.data_nascimento = colabs.data_nascimento;
-                colabViewModel.cpf = colabs.cpf;
-                colabViewModel.email = colabs.email;
+                colabViewModel.Nome = colabs.Nome;
+                colabViewModel.Sobrenome = colabs.Sobrenome;
+                colabViewModel.Data_Nascimento = colabs.Data_Nascimento;
+                colabViewModel.CPF = colabs.CPF;
+                colabViewModel.Email = colabs.Email;
 
                colaboradorViewList.Add(colabViewModel);
 
@@ -83,11 +83,11 @@ namespace PimProject.Application.Services
 
             if(colab != null)
             {
-                colab.nome = response.nome;
-                colab.sobrenome = response.sobrenome;
-                colab.data_nascimento = response.data_nascimento;
-                colab.cpf = response.cpf;
-                colab.email = response.email;
+                colab.Nome = response.Nome;
+                colab.Sobrenome = response.Sobrenome;
+                colab.Data_Nascimento = response.Data_Nascimento;
+                colab.CPF = response.CPF;
+                colab.Email = response.Email;
 
                   _colRepository.Update(colab);
                   await _colRepository.SaveChangesAsync();

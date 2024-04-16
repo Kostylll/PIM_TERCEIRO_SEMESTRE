@@ -30,12 +30,12 @@ namespace PimProject.Application.Services
 
         public async Task<bool> AdicionarFornecedor(FornecedoresResponse response)
         {
-            var forn = new Vendas()
+            var forn = new Fornecedores()
             {
-                nome_empresa = response.nome_empresa,
-                quantidade = response.quantidade,
-                valor = response.valor,
-                nome_produto = response.nome_produto,
+                Nome_Empresa = response.Nome_Empresa,
+                Quantidade = response.Quantidade,
+                Valor = response.Valor,
+                Nome_Produto = response.Nome_Produto,
             };
 
             await _forRepository.AddAsync(forn);
@@ -55,10 +55,10 @@ namespace PimProject.Application.Services
             {
                 var fornViewModel = new FornecedoresResponse();
 
-                fornViewModel.nome_empresa = forns.nome_empresa;
-                fornViewModel.quantidade = forns.quantidade;
-                fornViewModel.valor = forns.valor;
-                fornViewModel.nome_produto = forns.nome_produto;
+                fornViewModel.Nome_Empresa = forns.Nome_Empresa;
+                fornViewModel.Quantidade = forns.Quantidade;
+                fornViewModel.Valor = forns.Valor;
+                fornViewModel.Nome_Produto = forns.Nome_Produto;
 
                 forneViewList.Add(fornViewModel);
 
@@ -82,10 +82,10 @@ namespace PimProject.Application.Services
 
             if (forn != null)
             {
-                forn.nome_empresa = response.nome_empresa;
-                forn.quantidade = response.quantidade;
-                forn.valor = response.valor;
-                forn.nome_produto = response.nome_produto;
+                forn.Nome_Empresa = response.Nome_Empresa;
+                forn.Quantidade = response.Quantidade;
+                forn.Valor = response.Valor;
+                forn.Nome_Produto = response.Nome_Produto;
 
 
                 _forRepository.Update(forn);

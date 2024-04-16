@@ -9,10 +9,10 @@ namespace PimProject.Application.Domain.Aggregates
 {
     public class Fornecedores : Entity
     {
-        public string nome_empresa {  get; set; }
-        public string quantidade { get; set; }
-        public string valor {get; set; }
-        public string nome_produto { get; set; }
+        public string Nome_Empresa {  get; set; }
+        public string Quantidade { get; set; }
+        public string Valor {get; set; }
+        public string Nome_Produto { get; set; }
 
     }
 }

@@ -8,5 +8,6 @@ namespace PimProject.Application.Domain.Response
 {
     public class VendasResponse
     {
+        public string valor_venda { get; set; }
     }
 }
