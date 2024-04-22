@@ -1,13 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using PimAPI.Extension;
+using PimProject.Application.Infra.Data.DBContext;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddServices();
 builder.Services.AddEndpointsApiExplorer();
-
+builder.Services.AddRepository();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers(x => x.AllowEmptyInputInBodyModelBinding = true);
+builder.Services.AddDbContext<PimProjectDbContext>(options =>
+{
+    var cnn = builder.Configuration.GetConnectionString("CarModelDB");
+    options.UseSqlServer(cnn);
+});
+
+
 
 var app = builder.Build();
 
