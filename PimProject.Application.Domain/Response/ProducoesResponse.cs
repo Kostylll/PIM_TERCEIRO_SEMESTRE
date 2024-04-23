@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PimProject.Application.Domain.Response
 {
-    public class VendasResponse
+    public class ProducoesResponse
     {
-        public string valor_venda { get; set; }
+        public string produto_pro { get; set; }
     }
 }

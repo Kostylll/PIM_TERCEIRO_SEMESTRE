@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PimProject.Application.Domain.Response
+namespace PimProject.Application.Infra.Data.Configurations
 {
-    public class ProduçãoResponse
+    public class FornecedoresConfiguration
     {
     }
 }

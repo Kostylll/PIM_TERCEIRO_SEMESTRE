@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PimProject.Application.Infra.Data\PimProject.Application.Infra.Data.csproj" />
     <ProjectReference Include="..\PimProject.Application\PimProject.Application.csproj" />
   </ItemGroup>
