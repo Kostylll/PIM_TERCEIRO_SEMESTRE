@@ -2,9 +2,11 @@
 #use pim_iii
 
 #create table colaboradores (
-#colaborador_id int(5) not null primary key, 
-#nome char(75) not null, 
+#colaborador_cpf int(5) not null primary key, 
+#nome char(75) not null,
+#sobrenome char(75) not null, 
 #dat_nasci date not null, 
+#email char(75) not null,
 #setor char(20) not null
 #)
 
@@ -28,5 +30,5 @@
 #colaborador_ID int(5) not null
 #)
 
-#alter table producao add foreign key(colaborador_Id) references colaboradores(colaborador_id)
-#alter table vendas add foreign key(colaborador_ID) references colaboradores(colaborador_id)
+#alter table producao add foreign key(colaborador_Id) references colaboradores(colaborador_cpf)
+#alter table vendas add foreign key(colaborador_ID) references colaboradores(colaborador_cpf)
