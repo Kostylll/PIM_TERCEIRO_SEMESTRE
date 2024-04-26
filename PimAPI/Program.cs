@@ -15,7 +15,7 @@ builder.Services.AddControllers(x => x.AllowEmptyInputInBodyModelBinding = true)
 
 builder.Services.AddDbContext<PimProjectDbContext>(options =>
 {
-    var cnn = builder.Configuration.GetConnectionString("Pim_III");
+    var cnn = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseSqlServer(cnn);
 });
 

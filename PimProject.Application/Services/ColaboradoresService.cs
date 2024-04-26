@@ -13,17 +13,16 @@ namespace PimProject.Application.Services
 {
     public class ColaboradoresService : IColaboradoresServices
     {
-        private readonly PimProjectDbContext _context;
         private readonly IColaboradoresRepository _colRepository;
+  
+        public ColaboradoresService(IColaboradoresRepository colRepository)
+        {
+            _colRepository = colRepository;
+        }
 
         public ColaboradoresService()
         {
-        }
 
-        public ColaboradoresService(IColaboradoresRepository colRepository, PimProjectDbContext context)
-        {
-            _context = context;
-            _colRepository = colRepository;
         }
 
         public async Task<bool> AdicionarColaborador(ColaboradoresResponse response)
