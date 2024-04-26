@@ -12,6 +12,7 @@ namespace PimAPI.Extension
             services.AddServices();
             services.AddRepository();
             services.AddControllers();
+
             return services;
         }
 
@@ -21,6 +22,7 @@ namespace PimAPI.Extension
             services.AddScoped<IFornecedoresServices, FornecedoresService>();
             services.AddScoped<IProduçãoServices, ProduçãoService>();
             services.AddScoped<IVendasServices, VendasService>();
+           
 
             return services;
         }

@@ -12,11 +12,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddRepository();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers(x => x.AllowEmptyInputInBodyModelBinding = true);
+
 builder.Services.AddDbContext<PimProjectDbContext>(options =>
 {
-    var cnn = builder.Configuration.GetConnectionString("CarModelDB");
+    var cnn = builder.Configuration.GetConnectionString("Pim_III");
     options.UseSqlServer(cnn);
 });
+
 
 
 

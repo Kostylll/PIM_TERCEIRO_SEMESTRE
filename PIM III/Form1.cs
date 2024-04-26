@@ -7,11 +7,13 @@ namespace PIM_III
     public partial class Form1 : Form
     {
         private readonly ColaboradoresService _colService;
+        private readonly ColaboradoresServiceSql _sqlColService;
 
         public Form1()
         {
             InitializeComponent();
             _colService = new ColaboradoresService();
+            _sqlColService = new ColaboradoresServiceSql();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace PIM_III
                 CPF = cpf
             };
 
-             _colService.AdicionarColaborador(dadosForm);
+             _sqlColService.AdicionarColaborador(dadosForm);
 
          
 

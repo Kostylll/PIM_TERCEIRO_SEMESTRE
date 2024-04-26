@@ -33,7 +33,7 @@ namespace PimProject.Application.Infra.Data.DBContext
             {
                 var optionBuilder = new DbContextOptionsBuilder<PimProjectDbContext>();
 
-               optionBuilder.UseSqlServer("Data Source=localhost;Database=CarModelDB;Trusted_Connection=True;Trust Server Certificate = true;");
+               optionBuilder.UseSqlServer("Data Source=localhost;Database=Pim_III;Trusted_Connection=True;Trust Server Certificate = true;");
 
                 return new PimProjectDbContext(optionBuilder.Options);
             }
