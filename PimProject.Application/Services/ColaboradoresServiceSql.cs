@@ -44,6 +44,39 @@ namespace PimProject.Application.Services
             };
             return await AdicionarAsync(sqlCommand, parameters);
         }
+
+        public async Task<List<ColaboradoresResponse>> ExibirColaboradores()
+        {
+            var colaboradorViewList = new List<ColaboradoresResponse>();
+
+            using (var connection = new SqlConnection("sua_string_de_conexão"))
+            {
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand("SELECT Nome, Sobrenome, Data_Nascimento, CPF, Email FROM Colaboradores", connection))
+                {
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            var colabViewModel = new ColaboradoresResponse();
+
+                            colabViewModel.Nome = reader["Nome"].ToString();
+                            colabViewModel.Sobrenome = reader["Sobrenome"].ToString();
+                            colabViewModel.Data_Nascimento = reader["Data_Nascimento"].ToString();
+                            colabViewModel.CPF = reader["CPF"].ToString();
+                            colabViewModel.Email = reader["Email"].ToString();
+
+                            colaboradorViewList.Add(colabViewModel);
+                        }
+                    }
+                }
+            }
+
+            return colaboradorViewList;
+        }
+
+
         public async Task<bool> AdicionarAsync(string sqlCommand, Dictionary<string, object> parameters)
         {
             var cnn = "Data Source=localhost;Database=PIM_III;Trusted_Connection=True;Trust Server Certificate = true;";

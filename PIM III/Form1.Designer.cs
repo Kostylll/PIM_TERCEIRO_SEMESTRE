@@ -157,9 +157,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
-            Cursor = Cursors.Default;
             Name = "Form1";
-            Text = "Form1";
+            Text = "git p";
             ResumeLayout(false);
             PerformLayout();
         }

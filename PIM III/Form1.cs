@@ -34,11 +34,11 @@ namespace PIM_III
                 CPF = cpf
             };
 
-             _sqlColService.AdicionarColaborador(dadosForm);
+            _sqlColService.AdicionarColaborador(dadosForm);
 
-         
 
-    }
+
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

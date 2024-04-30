@@ -12,5 +12,7 @@ namespace PimProject.Application.Domain.Interface
         Task<bool> AdicionarColaborador(ColaboradoresResponse response);
 
         Task<bool> AdicionarAsync(string sqlCommand, Dictionary<string, object> parameters);
+
+        Task<List<ColaboradoresResponse>> ExibirColaboradores();
     }
 }
