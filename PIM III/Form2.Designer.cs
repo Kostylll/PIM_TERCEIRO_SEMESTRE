@@ -34,9 +34,9 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
+            button2 = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
-            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -82,6 +82,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox1.Image = Properties.Resources.icon_verde;
             pictureBox1.Location = new Point(1270, 9);
@@ -93,7 +94,7 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Lucida Sans", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.Snow;
@@ -117,6 +118,17 @@
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.White;
+            button2.Image = Properties.Resources.button;
+            button2.Location = new Point(130, 15);
+            button2.Name = "button2";
+            button2.Size = new Size(67, 23);
+            button2.TabIndex = 5;
+            button2.Text = "Editar";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // button1
             // 
             button1.BackColor = Color.White;
@@ -133,25 +145,15 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.BackgroundColor = Color.FromArgb(163, 177, 138);
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(-24, 51);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1291, 568);
+            dataGridView1.Size = new Size(1315, 571);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.White;
-            button2.Image = Properties.Resources.button;
-            button2.Location = new Point(130, 15);
-            button2.Name = "button2";
-            button2.Size = new Size(67, 23);
-            button2.TabIndex = 5;
-            button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = false;
             // 
             // Form2
             // 

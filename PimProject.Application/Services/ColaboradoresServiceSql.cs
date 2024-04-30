@@ -49,7 +49,7 @@ namespace PimProject.Application.Services
         {
             var colaboradorViewList = new List<ColaboradoresResponse>();
 
-            using (var connection = new SqlConnection("sua_string_de_conexão"))
+            using (var connection = new SqlConnection("Data Source=localhost;Database=PIM_III;Trusted_Connection=True;Trust Server Certificate=true;"))
             {
                 await connection.OpenAsync();
 
