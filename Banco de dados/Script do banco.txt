@@ -2,7 +2,7 @@
 #use pim_iii
 
 #create table colaboradores (
-#colaborador_cpf int(5) not null primary key, 
+#colaborador_cpf int(11) not null primary key, 
 #nome char(75) not null,
 #sobrenome char(75) not null, 
 #dat_nasci date not null, 
