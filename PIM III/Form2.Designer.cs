@@ -34,6 +34,8 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
+            pictureBox6 = new PictureBox();
+            textBox1 = new TextBox();
             pictureBox5 = new PictureBox();
             pictureBox4 = new PictureBox();
             dataGridView1 = new DataGridView();
@@ -42,6 +44,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -86,6 +89,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = Properties.Resources.icon_verde;
             pictureBox1.Location = new Point(1270, 9);
             pictureBox1.Name = "pictureBox1";
@@ -93,6 +97,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
@@ -111,6 +116,8 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(163, 177, 138);
+            panel2.Controls.Add(pictureBox6);
+            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(dataGridView1);
@@ -119,6 +126,30 @@
             panel2.Size = new Size(1291, 622);
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.Cursor = Cursors.Hand;
+            pictureBox6.Image = Properties.Resources.lupa;
+            pictureBox6.Location = new Point(1151, 13);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(17, 23);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 5;
+            pictureBox6.TabStop = false;
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.ForeColor = SystemColors.InfoText;
+            textBox1.Location = new Point(789, 13);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Buscar....";
+            textBox1.Size = new Size(379, 23);
+            textBox1.TabIndex = 3;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // pictureBox5
             // 
@@ -149,7 +180,7 @@
             dataGridView1.BackgroundColor = Color.FromArgb(163, 177, 138);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.GridColor = Color.White;
-            dataGridView1.Location = new Point(-24, 51);
+            dataGridView1.Location = new Point(-27, 48);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(1315, 571);
@@ -160,6 +191,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1350, 729);
             Controls.Add(panel1);
             Controls.Add(panel2);
@@ -172,6 +204,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -190,5 +224,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private TextBox textBox1;
+        private PictureBox pictureBox6;
     }
 }

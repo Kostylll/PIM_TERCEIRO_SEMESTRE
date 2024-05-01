@@ -1,6 +1,6 @@
 ﻿namespace PIM_III
 {
-    partial class UserControl1
+    partial class UserControl2
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -37,12 +37,6 @@
             pictureBox7 = new PictureBox();
             pictureBox8 = new PictureBox();
             pictureBox9 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -56,152 +50,105 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.image;
-            pictureBox1.Location = new Point(248, 14);
+            pictureBox1.Image = Properties.Resources.verde;
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(287, 22);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(381, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.email;
-            pictureBox2.Location = new Point(547, 101);
+            pictureBox2.Image = Properties.Resources.verde;
+            pictureBox2.Location = new Point(0, 47);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(56, 34);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.Size = new Size(381, 56);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.status;
-            pictureBox3.Location = new Point(547, 34);
+            pictureBox3.Image = Properties.Resources.verde;
+            pictureBox3.Location = new Point(0, 100);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(56, 50);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.Size = new Size(381, 50);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.tele2;
-            pictureBox4.Location = new Point(365, 101);
+            pictureBox4.BackgroundImage = Properties.Resources.Screenshot_177;
+            pictureBox4.Image = Properties.Resources.icon_verde1;
+            pictureBox4.Location = new Point(3, 3);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(87, 34);
+            pictureBox4.Size = new Size(58, 38);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = Properties.Resources.tele1;
-            pictureBox5.Location = new Point(199, 103);
+            pictureBox5.BackgroundImage = Properties.Resources.Screenshot_177;
+            pictureBox5.Image = Properties.Resources.dados;
+            pictureBox5.Location = new Point(67, 3);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(81, 34);
+            pictureBox5.Size = new Size(110, 38);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
-            pictureBox6.Image = Properties.Resources.imageasda;
-            pictureBox6.Location = new Point(21, 103);
+            pictureBox6.BackgroundImage = Properties.Resources.Screenshot_177;
+            pictureBox6.Image = Properties.Resources.ajuda;
+            pictureBox6.Location = new Point(3, 56);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(61, 34);
+            pictureBox6.Size = new Size(58, 35);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 5;
             pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click;
             // 
             // pictureBox7
             // 
-            pictureBox7.Image = Properties.Resources.Nome;
-            pictureBox7.Location = new Point(21, 34);
+            pictureBox7.BackgroundImage = Properties.Resources.Screenshot_177;
+            pictureBox7.Image = Properties.Resources.Ajudatexto;
+            pictureBox7.Location = new Point(67, 56);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(137, 50);
+            pictureBox7.Size = new Size(52, 35);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 6;
             pictureBox7.TabStop = false;
             // 
             // pictureBox8
             // 
-            pictureBox8.Cursor = Cursors.Hand;
-            pictureBox8.Image = Properties.Resources.X;
-            pictureBox8.Location = new Point(771, 14);
+            pictureBox8.BackgroundImage = Properties.Resources.Screenshot_177;
+            pictureBox8.Image = Properties.Resources.SairTexto;
+            pictureBox8.Location = new Point(67, 109);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(34, 22);
+            pictureBox8.Size = new Size(41, 31);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 7;
             pictureBox8.TabStop = false;
-            pictureBox8.Click += pictureBox8_Click_1;
             // 
             // pictureBox9
             // 
-            pictureBox9.Image = Properties.Resources.endereço;
-            pictureBox9.Location = new Point(352, 182);
+            pictureBox9.BackgroundImage = Properties.Resources.Screenshot_177;
+            pictureBox9.Image = Properties.Resources.SairLogo;
+            pictureBox9.Location = new Point(3, 109);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(80, 50);
+            pictureBox9.Size = new Size(58, 31);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox9.TabIndex = 8;
             pictureBox9.TabStop = false;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(547, 72);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 23);
-            textBox1.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(21, 72);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(464, 23);
-            textBox2.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(547, 134);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(258, 23);
-            textBox3.TabIndex = 11;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(21, 134);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(157, 23);
-            textBox4.TabIndex = 12;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(365, 134);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(163, 23);
-            textBox5.TabIndex = 13;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(199, 134);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(145, 23);
-            textBox6.TabIndex = 14;
-            // 
-            // UserControl1
+            // UserControl2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(52, 78, 65);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Controls.Add(pictureBox9);
             Controls.Add(pictureBox8);
             Controls.Add(pictureBox7);
@@ -211,8 +158,8 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Name = "UserControl1";
-            Size = new Size(829, 448);
+            Name = "UserControl2";
+            Size = new Size(381, 150);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -223,7 +170,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -237,11 +183,5 @@
         private PictureBox pictureBox7;
         private PictureBox pictureBox8;
         private PictureBox pictureBox9;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
     }
 }

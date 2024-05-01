@@ -80,10 +80,31 @@ namespace PIM_III
             int y = (this.Height - userControl1.Height) / 2;
 
 
+
             userControl1.Location = new Point(x, y);
 
             userControl1.BringToFront();
             userControl1.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+
+            UserControl2 userControl2 = new UserControl2();
+
+            userControl2.Location = new Point(970, 63);
+
+            this.Controls.Add(userControl2);
+
+
+            userControl2.BringToFront();
+            userControl2.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

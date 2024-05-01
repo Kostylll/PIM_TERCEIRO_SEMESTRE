@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PIM_III
 {
-    public partial class TelaDeAdição : Form
+    public partial class UserControl2 : UserControl
     {
-        public TelaDeAdição()
+        public UserControl2()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
