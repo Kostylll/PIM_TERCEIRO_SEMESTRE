@@ -21,5 +21,24 @@ namespace PIM_III
         {
 
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+
+            this.Controls.Add(form2);
+
+            form2.Close();
+
+
+
+            Form1 form = new Form1();
+
+            this.Controls.Add(form);
+
+            form.Show();
+
+
+        }
     }
 }

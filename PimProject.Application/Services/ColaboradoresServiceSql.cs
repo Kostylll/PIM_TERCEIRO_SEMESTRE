@@ -103,6 +103,39 @@ namespace PimProject.Application.Services
                 return false;
             }
         }
+
+        public async Task<List<ColaboradoresResponse>> PesquisarColaboradores(string searchTerm)
+        {
+            var resultados = new List<ColaboradoresResponse>();
+
+            using (var connection = new SqlConnection("Data Source=localhost;Database=PIM_III;Trusted_Connection=True;Trust Server Certificate=true;"))
+            {
+                await connection.OpenAsync();
+
+                string query = "SELECT Nome, Sobrenome, Data_Nascimento, CPF, Email FROM Colaboradores WHERE Nome LIKE @searchTerm OR Sobrenome LIKE @searchTerm OR CPF LIKE @searchTerm OR Email LIKE @searchTerm";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            var colabViewModel = new ColaboradoresResponse();
+
+                            colabViewModel.Nome = reader["Nome"].ToString();
+                            colabViewModel.Sobrenome = reader["Sobrenome"].ToString();
+                            colabViewModel.Data_Nascimento = reader["Data_Nascimento"].ToString();
+                            colabViewModel.CPF = reader["CPF"].ToString();
+                            colabViewModel.Email = reader["Email"].ToString();
+
+                            resultados.Add(colabViewModel);
+                        }
+                    }
+                }
+            }
+
+            return resultados;
+        }
     }
 
 }

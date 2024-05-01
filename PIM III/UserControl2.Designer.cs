@@ -70,6 +70,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Cursor = Cursors.Hand;
             pictureBox3.Image = Properties.Resources.verde;
             pictureBox3.Location = new Point(0, 100);
             pictureBox3.Name = "pictureBox3";
@@ -77,6 +78,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // pictureBox4
             // 

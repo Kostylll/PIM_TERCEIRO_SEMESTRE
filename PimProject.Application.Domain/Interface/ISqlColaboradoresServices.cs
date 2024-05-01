@@ -14,5 +14,7 @@ namespace PimProject.Application.Domain.Interface
         Task<bool> AdicionarAsync(string sqlCommand, Dictionary<string, object> parameters);
 
         Task<List<ColaboradoresResponse>> ExibirColaboradores();
+
+        Task<List<ColaboradoresResponse>> PesquisarColaboradores(string searchTerm);
     }
 }
