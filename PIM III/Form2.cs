@@ -110,10 +110,20 @@ namespace PIM_III
 
         private async void pictureBox6_Click(object sender, EventArgs e)
         {
-
+            //FUNÇÃO LUPINHA
             string searchTerm = textBox1.Text;
             List<ColaboradoresResponse> resultados = await _colaboradoresServiceSql.PesquisarColaboradores(searchTerm);
             dataGridView1.DataSource = resultados;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
