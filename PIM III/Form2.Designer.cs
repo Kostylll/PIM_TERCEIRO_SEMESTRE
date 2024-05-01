@@ -34,14 +34,16 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
+            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
             dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -109,8 +111,8 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(163, 177, 138);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(pictureBox5);
+            panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new Point(27, 85);
             panel2.Name = "panel2";
@@ -118,29 +120,28 @@
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
             // 
-            // button2
+            // pictureBox5
             // 
-            button2.BackColor = Color.White;
-            button2.Image = Properties.Resources.button;
-            button2.Location = new Point(130, 15);
-            button2.Name = "button2";
-            button2.Size = new Size(67, 23);
-            button2.TabIndex = 5;
-            button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = false;
+            pictureBox5.Cursor = Cursors.Hand;
+            pictureBox5.Image = Properties.Resources.editar;
+            pictureBox5.Location = new Point(165, 3);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(93, 45);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 4;
+            pictureBox5.TabStop = false;
             // 
-            // button1
+            // pictureBox4
             // 
-            button1.BackColor = Color.White;
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.Image = Properties.Resources.button;
-            button1.Location = new Point(30, 15);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 23);
-            button1.TabIndex = 4;
-            button1.Text = "+ Adicionar";
-            button1.TextAlign = ContentAlignment.BottomLeft;
-            button1.UseVisualStyleBackColor = false;
+            pictureBox4.Cursor = Cursors.Hand;
+            pictureBox4.Image = Properties.Resources.adicionar;
+            pictureBox4.Location = new Point(32, 3);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(127, 45);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 3;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // dataGridView1
             // 
@@ -171,6 +172,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -185,7 +188,7 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
-        private Button button1;
-        private Button button2;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
     }
 }

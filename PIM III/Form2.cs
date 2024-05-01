@@ -68,5 +68,22 @@ namespace PIM_III
                 );
             }
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+            UserControl1 userControl1 = new UserControl1();
+
+            this.Controls.Add(userControl1);
+
+            int x = (this.Width - userControl1.Width) / 2;
+            int y = (this.Height - userControl1.Height) / 2;
+
+
+            userControl1.Location = new Point(x, y);
+
+            userControl1.BringToFront();
+            userControl1.Show();
+        }
     }
 }
