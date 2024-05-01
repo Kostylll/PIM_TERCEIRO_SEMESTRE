@@ -15,7 +15,7 @@ namespace PIM_III
     public partial class Form2 : Form
     {
         private ColaboradoresServiceSql _colaboradoresServiceSql;
-
+        private UserControl2 userControl2;
         public Form2()
         {
             InitializeComponent();
@@ -90,17 +90,22 @@ namespace PIM_III
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            if (userControl2 == null || userControl2.IsDisposed) 
+            {
+                userControl2 = new UserControl2();
+                userControl2.Location = new Point(970, 63);
+                this.Controls.Add(userControl2);
+            }
 
-
-            UserControl2 userControl2 = new UserControl2();
-
-            userControl2.Location = new Point(970, 63);
-
-            this.Controls.Add(userControl2);
-
-
-            userControl2.BringToFront();
-            userControl2.Show();
+            if (userControl2.Visible)
+            {
+                userControl2.Hide(); 
+            }
+            else
+            {
+                userControl2.BringToFront();
+                userControl2.Show(); 
+            }
         }
 
         private async void textBox1_TextChanged(object sender, EventArgs e)
