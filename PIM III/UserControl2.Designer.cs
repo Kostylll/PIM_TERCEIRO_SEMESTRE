@@ -161,7 +161,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "UserControl2";
-            Size = new Size(381, 150);
+            Size = new Size(381, 149);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

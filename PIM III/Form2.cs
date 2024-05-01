@@ -15,13 +15,13 @@ namespace PIM_III
     public partial class Form2 : Form
     {
         private ColaboradoresServiceSql _colaboradoresServiceSql;
-    
+
         public Form2()
         {
             InitializeComponent();
             _colaboradoresServiceSql = new ColaboradoresServiceSql();
             PreencherDataGridView();
-            
+
 
         }
 
@@ -90,7 +90,7 @@ namespace PIM_III
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
 
             UserControl2 userControl2 = new UserControl2();
 
@@ -105,7 +105,7 @@ namespace PIM_III
 
         private async void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private async void pictureBox6_Click(object sender, EventArgs e)
