@@ -29,8 +29,7 @@ namespace PimProject.Application.Services
         {
             var colab = new Colaboradores()
             {
-                Nome = response.Nome,
-                Sobrenome = response.Sobrenome,
+                Nome_Completo = response.Nome_Completo,             
                 Email = response.Email,
                 Data_Nascimento = response.Data_Nascimento,
                 CPF = response.CPF,
@@ -54,8 +53,7 @@ namespace PimProject.Application.Services
             {
                 var colabViewModel = new ColaboradoresResponse();
 
-                colabViewModel.Nome = colabs.Nome;
-                colabViewModel.Sobrenome = colabs.Sobrenome;
+                colabViewModel.Nome_Completo = colabs.Nome_Completo;
                 colabViewModel.Data_Nascimento = colabs.Data_Nascimento;
                 colabViewModel.CPF = colabs.CPF;
                 colabViewModel.Email = colabs.Email;
@@ -82,8 +80,7 @@ namespace PimProject.Application.Services
 
             if(colab != null)
             {
-                colab.Nome = response.Nome;
-                colab.Sobrenome = response.Sobrenome;
+                colab.Nome_Completo = response.Nome_Completo;
                 colab.Data_Nascimento = response.Data_Nascimento;
                 colab.CPF = response.CPF;
                 colab.Email = response.Email;

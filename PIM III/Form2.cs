@@ -46,10 +46,10 @@ namespace PIM_III
         {
             List<ColaboradoresResponse> colaboradores = await _colaboradoresServiceSql.ExibirColaboradores();
 
-            // Criar uma BindingList a partir da lista de colaboradores
+           
             BindingList<ColaboradoresResponse> bindingList = new BindingList<ColaboradoresResponse>(colaboradores);
 
-            // Configurar o DataGridView para usar a BindingList como fonte de dados
+          
             dataGridView1.DataSource = bindingList;
 
 
@@ -96,7 +96,7 @@ namespace PIM_III
 
         private async void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            textBox1.BackColor = Color.Transparent;
         }
 
         private async void pictureBox6_Click(object sender, EventArgs e)
@@ -114,7 +114,32 @@ namespace PIM_III
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                UserControl1 userControl1 = new UserControl1();
+                this.Controls.Add(userControl1);
 
+                int x = (this.Width - userControl1.Width) / 2;
+                int y = (this.Height - userControl1.Height) / 2;
+
+                userControl1.Location = new Point(x, y);
+                userControl1.Show();
+                userControl1.BringToFront();
+
+           
+
+                DataGridViewRow linhaSelecionada = dataGridView1.SelectedRows[0];
+               
+                string nome = linhaSelecionada.Cells["Nome_Completo"].Value.ToString();
+                string email = linhaSelecionada.Cells["Email"].Value.ToString();
+                string cpf = linhaSelecionada.Cells["CPF"].Value.ToString();
+
+                userControl1.SetValues(nome, email, cpf);
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma linha para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

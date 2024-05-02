@@ -27,11 +27,11 @@ namespace PIM_III
 
             var dadosForm = new ColaboradoresResponse
             {
-                Nome = nome,
+                Nome_Completo = nome,
                 Sobrenome = sobrenome,
                 Email = email,
                 Data_Nascimento = dataNascimento,
-                CPF = cpf
+                CPF = cpf,
             };
 
             _sqlColService.AdicionarColaborador(dadosForm);

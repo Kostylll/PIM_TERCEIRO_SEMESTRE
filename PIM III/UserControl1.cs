@@ -50,6 +50,28 @@ namespace PIM_III
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void SetValues(string nome,string email, string cpf)
+        {
+            textBox2.Text = nome;
+            textBox3.Text = email;
+            textBox4.Text = cpf;
+
+
+        }
+
+
+
     }
 }
 

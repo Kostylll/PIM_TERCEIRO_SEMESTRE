@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace PimProject.Application.Domain.Aggregates
 {
-    public class Colaboradores:Entity
+    public class Colaboradores : Entity
     {
-        public string Nome { get; set; }
-        public string Sobrenome { get; set; }
+        public string Nome_Completo { get; set; }
         public string Email { get; set; }
         public string Data_Nascimento { get; set; }
         public string CPF { get; set; }
+        public string Status { get; set; }
 
     }
 }

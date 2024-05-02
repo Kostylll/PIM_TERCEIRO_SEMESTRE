@@ -174,7 +174,7 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
-        private TextBox textBox5;
         private TextBox textBox4;
+        public TextBox textBox5;
     }
 }
