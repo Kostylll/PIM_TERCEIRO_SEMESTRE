@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PimProject.Application.Domain.Response;
+using PimProject.Application.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,11 @@ namespace PIM_III
 {
     public partial class UserControl1 : UserControl
     {
+        private readonly ColaboradoresServiceSql _colaboradoresServiceSql;
         public UserControl1()
         {
             InitializeComponent();
+            _colaboradoresServiceSql = new ColaboradoresServiceSql();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -61,7 +65,7 @@ namespace PIM_III
 
         }
 
-        public void SetValues(string nome,string email, string cpf)
+        public void SetValues(string nome, string email, string cpf)
         {
             textBox2.Text = nome;
             textBox3.Text = email;
@@ -70,8 +74,59 @@ namespace PIM_III
 
         }
 
+        public void pictureBox10_Click(object sender, EventArgs e)
+        {
+            UserControl1 userControl1 = new UserControl1();
+            this.Controls.Add(userControl1);
+
+            var cpf = textBox4.Text;
+
+            _colaboradoresServiceSql.RemoverColaborador(cpf);
+
+            Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+
+            form2.PreencherDataGridView();
+
+            this.Parent.Controls.Remove(this);
+        }
 
 
+        public async Task EsconderBotao()
+        {
+            pictureBox10.Hide();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            UserControl1 userControl1 = new UserControl1();
+            this.Controls.Add(userControl1);
+
+            string nome = textBox2.Text;
+            string email = textBox3.Text;
+            string cpf = textBox4.Text;
+
+            var dadosForm = new ColaboradoresResponse
+            {
+                Nome_Completo = nome,
+                Email = email,
+                CPF = cpf,
+                Data_Nascimento = "",
+            };
+
+
+            _colaboradoresServiceSql.AdicionarColaborador(dadosForm);
+
+            Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+
+            form2.PreencherDataGridView();
+
+            this.Parent.Controls.Remove(this);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

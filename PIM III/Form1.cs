@@ -19,7 +19,6 @@ namespace PIM_III
         private void button1_Click(object sender, EventArgs e)
         {
             string nome = textBox1.Text;
-            string sobrenome = textBox2.Text;
             string email = textBox3.Text;
             string dataNascimento = textBox4.Text;
             string cpf = textBox5.Text;
@@ -28,7 +27,6 @@ namespace PIM_III
             var dadosForm = new ColaboradoresResponse
             {
                 Nome_Completo = nome,
-                Sobrenome = sobrenome,
                 Email = email,
                 Data_Nascimento = dataNascimento,
                 CPF = cpf,

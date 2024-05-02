@@ -16,5 +16,7 @@ namespace PimProject.Application.Domain.Interface
         Task<List<ColaboradoresResponse>> ExibirColaboradores();
 
         Task<List<ColaboradoresResponse>> PesquisarColaboradores(string searchTerm);
+
+        Task<bool> RemoverColaborador(string cpf);
     }
 }

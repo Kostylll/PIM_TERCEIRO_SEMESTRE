@@ -43,6 +43,8 @@
             textBox4 = new TextBox();
             textBox5 = new TextBox();
             textBox6 = new TextBox();
+            pictureBox10 = new PictureBox();
+            pictureBox11 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -52,6 +54,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -169,13 +173,16 @@
             // 
             textBox3.Location = new Point(547, 134);
             textBox3.Name = "textBox3";
+            textBox3.PlaceholderText = "exemplo@email.com";
             textBox3.Size = new Size(258, 23);
             textBox3.TabIndex = 11;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
             textBox4.Location = new Point(21, 134);
             textBox4.Name = "textBox4";
+            textBox4.PlaceholderText = "000.000.000-00";
             textBox4.Size = new Size(157, 23);
             textBox4.TabIndex = 12;
             // 
@@ -183,6 +190,7 @@
             // 
             textBox5.Location = new Point(365, 134);
             textBox5.Name = "textBox5";
+            textBox5.PlaceholderText = "(XX)XXXX-XXXX";
             textBox5.Size = new Size(163, 23);
             textBox5.TabIndex = 13;
             // 
@@ -190,14 +198,39 @@
             // 
             textBox6.Location = new Point(199, 134);
             textBox6.Name = "textBox6";
+            textBox6.PlaceholderText = "(XX)XXXX-XXXX";
             textBox6.Size = new Size(145, 23);
             textBox6.TabIndex = 14;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = Properties.Resources.delete;
+            pictureBox10.Location = new Point(705, 350);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(100, 50);
+            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox10.TabIndex = 15;
+            pictureBox10.TabStop = false;
+            pictureBox10.Click += pictureBox10_Click;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Image = Properties.Resources.salvar;
+            pictureBox11.Location = new Point(705, 395);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(100, 50);
+            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox11.TabIndex = 16;
+            pictureBox11.TabStop = false;
+            pictureBox11.Click += pictureBox11_Click;
             // 
             // UserControl1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(52, 78, 65);
+            Controls.Add(pictureBox11);
+            Controls.Add(pictureBox10);
             Controls.Add(textBox6);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
@@ -224,6 +257,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,5 +280,7 @@
         private TextBox textBox4;
         private TextBox textBox5;
         private TextBox textBox6;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox11;
     }
 }

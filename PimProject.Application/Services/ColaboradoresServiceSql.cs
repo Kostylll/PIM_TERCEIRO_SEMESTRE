@@ -140,7 +140,45 @@ namespace PimProject.Application.Services
 
             return resultados;
         }
-    }
 
+        public async Task<bool> RemoverColaborador(string cpf)
+        {
+            if (string.IsNullOrEmpty(cpf))
+            {
+                throw new ArgumentNullException(nameof(cpf), "CPF cannot be null or empty.");
+            }
+
+            string connectionString = "Data Source=localhost;Database=PIM_III;Trusted_Connection=True;Trust Server Certificate=true;";
+            string deleteQuery = "DELETE FROM Colaborador WHERE cpf = @cpf";
+
+            bool success = false;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                await connection.OpenAsync();
+
+                try
+                {
+                    using (SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection))
+                    {
+                        deleteCommand.Parameters.AddWithValue("@cpf", cpf);
+                        int rowsAffected = await deleteCommand.ExecuteNonQueryAsync();
+                        success = rowsAffected > 0;
+                    }
+                }
+                catch (SqlException ex)
+                {
+                   
+                    Console.WriteLine($"Error removing collaborator: {ex.Message}");
+                    throw; 
+                }
+            }
+
+            return success;
+        }
+    }
 }
+
+    
+
 

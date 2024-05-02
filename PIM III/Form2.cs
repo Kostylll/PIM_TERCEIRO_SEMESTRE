@@ -42,14 +42,14 @@ namespace PIM_III
         {
 
         }
-        private async Task PreencherDataGridView()
+        public async Task PreencherDataGridView()
         {
             List<ColaboradoresResponse> colaboradores = await _colaboradoresServiceSql.ExibirColaboradores();
 
-           
+
             BindingList<ColaboradoresResponse> bindingList = new BindingList<ColaboradoresResponse>(colaboradores);
 
-          
+
             dataGridView1.DataSource = bindingList;
 
 
@@ -65,13 +65,15 @@ namespace PIM_III
 
             int x = (this.Width - userControl1.Width) / 2;
             int y = (this.Height - userControl1.Height) / 2;
-
-
-
             userControl1.Location = new Point(x, y);
 
             userControl1.BringToFront();
             userControl1.Show();
+
+
+            userControl1.EsconderBotao();
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -96,7 +98,7 @@ namespace PIM_III
 
         private async void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.BackColor = Color.Transparent;
+
         }
 
         private async void pictureBox6_Click(object sender, EventArgs e)
@@ -126,10 +128,10 @@ namespace PIM_III
                 userControl1.Show();
                 userControl1.BringToFront();
 
-           
+
 
                 DataGridViewRow linhaSelecionada = dataGridView1.SelectedRows[0];
-               
+
                 string nome = linhaSelecionada.Cells["Nome_Completo"].Value.ToString();
                 string email = linhaSelecionada.Cells["Email"].Value.ToString();
                 string cpf = linhaSelecionada.Cells["CPF"].Value.ToString();
