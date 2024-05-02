@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PimProject.Application.Domain.Aggregates
 {
-    public class Colaboradores : Entity
+    public class Colaboradores:Entity
     {
         public string Nome { get; set; }
         public string Sobrenome { get; set; }

@@ -35,15 +35,8 @@ namespace PIM_III
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -53,22 +46,15 @@ namespace PIM_III
         {
             List<ColaboradoresResponse> colaboradores = await _colaboradoresServiceSql.ExibirColaboradores();
 
+            // Criar uma BindingList a partir da lista de colaboradores
+            BindingList<ColaboradoresResponse> bindingList = new BindingList<ColaboradoresResponse>(colaboradores);
 
-            dataGridView1.Rows.Clear();
+            // Configurar o DataGridView para usar a BindingList como fonte de dados
+            dataGridView1.DataSource = bindingList;
 
 
-            foreach (var colaborador in colaboradores)
-            {
-
-                dataGridView1.Rows.Add(
-                    colaborador.Nome,
-                    colaborador.Sobrenome,
-                    colaborador.Data_Nascimento,
-                    colaborador.CPF,
-                    colaborador.Email
-                );
-            }
         }
+
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -90,7 +76,7 @@ namespace PIM_III
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (userControl2 == null || userControl2.IsDisposed) 
+            if (userControl2 == null || userControl2.IsDisposed)
             {
                 userControl2 = new UserControl2();
                 userControl2.Location = new Point(970, 63);
@@ -99,12 +85,12 @@ namespace PIM_III
 
             if (userControl2.Visible)
             {
-                userControl2.Hide(); 
+                userControl2.Hide();
             }
             else
             {
                 userControl2.BringToFront();
-                userControl2.Show(); 
+                userControl2.Show();
             }
         }
 

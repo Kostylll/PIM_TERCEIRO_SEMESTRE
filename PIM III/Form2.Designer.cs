@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            panel2 = new Panel();
-            pictureBox6 = new PictureBox();
-            textBox1 = new TextBox();
-            pictureBox5 = new PictureBox();
             pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            textBox1 = new TextBox();
+            pictureBox6 = new PictureBox();
             dataGridView1 = new DataGridView();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -63,7 +66,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1481, 66);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // pictureBox3
             // 
@@ -113,20 +115,40 @@
             label1.Text = "Olá,Fulano";
             label1.Click += label1_Click;
             // 
-            // panel2
+            // pictureBox4
             // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = Color.FromArgb(163, 177, 138);
-            panel2.Controls.Add(pictureBox6);
-            panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(pictureBox5);
-            panel2.Controls.Add(pictureBox4);
-            panel2.Controls.Add(dataGridView1);
-            panel2.Location = new Point(27, 85);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1291, 622);
-            panel2.TabIndex = 2;
-            panel2.Paint += panel2_Paint;
+            pictureBox4.Cursor = Cursors.Hand;
+            pictureBox4.Image = Properties.Resources.adicionar;
+            pictureBox4.Location = new Point(32, 3);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(127, 45);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 3;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Cursor = Cursors.Hand;
+            pictureBox5.Image = Properties.Resources.editar;
+            pictureBox5.Location = new Point(165, 3);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(93, 45);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 4;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.ForeColor = SystemColors.InfoText;
+            textBox1.Location = new Point(789, 13);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Buscar....";
+            textBox1.Size = new Size(379, 23);
+            textBox1.TabIndex = 3;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // pictureBox6
             // 
@@ -142,53 +164,51 @@
             pictureBox6.TabStop = false;
             pictureBox6.Click += pictureBox6_Click;
             // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.ForeColor = SystemColors.InfoText;
-            textBox1.Location = new Point(789, 13);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Buscar....";
-            textBox1.Size = new Size(379, 23);
-            textBox1.TabIndex = 3;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Cursor = Cursors.Hand;
-            pictureBox5.Image = Properties.Resources.editar;
-            pictureBox5.Location = new Point(165, 3);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(93, 45);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 4;
-            pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Cursor = Cursors.Hand;
-            pictureBox4.Image = Properties.Resources.adicionar;
-            pictureBox4.Location = new Point(32, 3);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(127, 45);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
-            // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.BackgroundColor = Color.FromArgb(163, 177, 138);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(163, 177, 138);
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ControlDark;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.GridColor = Color.White;
-            dataGridView1.Location = new Point(-27, 48);
+            dataGridView1.Location = new Point(0, 54);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1315, 571);
+            dataGridView1.Size = new Size(1291, 568);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BackColor = Color.FromArgb(163, 177, 138);
+            panel2.Controls.Add(pictureBox6);
+            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(pictureBox5);
+            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(dataGridView1);
+            panel2.Location = new Point(27, 85);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1291, 622);
+            panel2.TabIndex = 2;
             // 
             // Form2
             // 
@@ -206,12 +226,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -220,8 +240,6 @@
 
         private Panel panel1;
         private Label label1;
-        private Panel panel2;
-        private DataGridView dataGridView1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
@@ -229,5 +247,7 @@
         private PictureBox pictureBox5;
         private TextBox textBox1;
         private PictureBox pictureBox6;
+        private DataGridView dataGridView1;
+        private Panel panel2;
     }
 }

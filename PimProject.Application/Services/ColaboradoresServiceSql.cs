@@ -7,6 +7,7 @@ using PimProject.Application.Infra.Data.DBContext;
 using PimProject.Application.Infra.Data.Repository;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,9 @@ namespace PimProject.Application.Services
 
         public async Task<bool> AdicionarColaborador(ColaboradoresResponse response)
         {
-            string sqlCommand = "INSERTO INTO Colaboradores (Nome, Sobrenome, Data_Nascimento, CPF, Email) VALUES (@Nome, @Sobrenome, @Data_Nascimento, @CPF, @Email)";
+            string sqlCommand = "INSERT INTO Colaborador (Nome, Sobrenome, Data_Nascimento, CPF, Email) VALUES (@Nome, @Sobrenome, @Data_Nascimento, @CPF, @Email)";
+
+           
 
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
@@ -49,11 +52,15 @@ namespace PimProject.Application.Services
         {
             var colaboradorViewList = new List<ColaboradoresResponse>();
 
-            using (var connection = new SqlConnection("Data Source=localhost;Database=PIM_III;Trusted_Connection=True;Trust Server Certificate=true;"))
+            string connectionString = "Data Source=localhost;Database=PIM_III;Trusted_Connection=True;Trust Server Certificate = true;";
+
+            using (var connection = new SqlConnection(connectionString))
             {
                 await connection.OpenAsync();
 
-                using (var command = new SqlCommand("SELECT Nome, Sobrenome, Data_Nascimento, CPF, Email FROM Colaboradores", connection))
+                string query = "SELECT CPF, NOME, SOBRENOME, DATA_NASCIMENTO, EMAIL FROM Colaborador";
+
+                using (var command = new SqlCommand(query, connection))
                 {
                     using (var reader = await command.ExecuteReaderAsync())
                     {
@@ -61,11 +68,11 @@ namespace PimProject.Application.Services
                         {
                             var colabViewModel = new ColaboradoresResponse();
 
-                            colabViewModel.Nome = reader["Nome"].ToString();
-                            colabViewModel.Sobrenome = reader["Sobrenome"].ToString();
-                            colabViewModel.Data_Nascimento = reader["Data_Nascimento"].ToString();
                             colabViewModel.CPF = reader["CPF"].ToString();
-                            colabViewModel.Email = reader["Email"].ToString();
+                            colabViewModel.Nome = reader["NOME"].ToString();
+                            colabViewModel.Sobrenome = reader["SOBRENOME"].ToString();
+                            colabViewModel.Data_Nascimento = reader["DATA_NASCIMENTO"].ToString();
+                            colabViewModel.Email = reader["EMAIL"].ToString();
 
                             colaboradorViewList.Add(colabViewModel);
                         }
@@ -112,7 +119,7 @@ namespace PimProject.Application.Services
             {
                 await connection.OpenAsync();
 
-                string query = "SELECT Nome, Sobrenome, Data_Nascimento, CPF, Email FROM Colaboradores WHERE Nome LIKE @searchTerm OR Sobrenome LIKE @searchTerm OR CPF LIKE @searchTerm OR Email LIKE @searchTerm";
+                string query = "SELECT Nome, Sobrenome, Data_Nascimento, CPF, Email FROM Colaborador WHERE Nome LIKE @searchTerm OR Sobrenome LIKE @searchTerm OR CPF LIKE @searchTerm OR Email LIKE @searchTerm";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");

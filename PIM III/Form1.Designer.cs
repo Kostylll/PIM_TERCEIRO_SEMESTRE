@@ -37,8 +37,8 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
-            textBox4 = new TextBox();
             textBox5 = new TextBox();
+            textBox4 = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -125,14 +125,6 @@
             textBox3.TabIndex = 8;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(345, 234);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(121, 23);
-            textBox4.TabIndex = 9;
-            textBox4.TextChanged += textBox4_TextChanged;
-            // 
             // textBox5
             // 
             textBox5.Location = new Point(345, 268);
@@ -141,13 +133,21 @@
             textBox5.TabIndex = 10;
             textBox5.TextChanged += textBox5_TextChanged;
             // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(345, 234);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(121, 23);
+            textBox4.TabIndex = 11;
+            textBox4.TextChanged += textBox4_TextChanged_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(814, 450);
-            Controls.Add(textBox5);
             Controls.Add(textBox4);
+            Controls.Add(textBox5);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -174,7 +174,7 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
-        private TextBox textBox4;
         private TextBox textBox5;
+        private TextBox textBox4;
     }
 }
