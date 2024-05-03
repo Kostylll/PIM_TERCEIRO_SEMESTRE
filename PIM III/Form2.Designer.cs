@@ -227,6 +227,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1291, 622);
             panel2.TabIndex = 2;
+            panel2.Paint += panel2_Paint;
             // 
             // Form2
             // 

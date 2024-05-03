@@ -59,8 +59,12 @@ namespace PIM_III
         private void pictureBox4_Click(object sender, EventArgs e)
         {
 
-            UserControl1 userControl1 = new UserControl1();
+            if (this.Controls.OfType<UserControl1>().Any())
+            {
+                return;
+            }
 
+            UserControl1 userControl1 = new UserControl1();
             this.Controls.Add(userControl1);
 
             int x = (this.Width - userControl1.Width) / 2;
@@ -70,11 +74,11 @@ namespace PIM_III
             userControl1.BringToFront();
             userControl1.Show();
 
-
             userControl1.EsconderBotao();
 
-
         }
+
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -116,6 +120,13 @@ namespace PIM_III
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+
+            if (this.Controls.OfType<UserControl1>().Any())
+            {
+                return;
+            }
+
+
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 UserControl1 userControl1 = new UserControl1();
@@ -127,9 +138,6 @@ namespace PIM_III
                 userControl1.Location = new Point(x, y);
                 userControl1.Show();
                 userControl1.BringToFront();
-
-
-
                 DataGridViewRow linhaSelecionada = dataGridView1.SelectedRows[0];
 
                 string nome = linhaSelecionada.Cells["Nome_Completo"].Value.ToString();
@@ -137,11 +145,17 @@ namespace PIM_III
                 string cpf = linhaSelecionada.Cells["CPF"].Value.ToString();
 
                 userControl1.SetValues(nome, email, cpf);
+
             }
             else
             {
                 MessageBox.Show("Selecione uma linha para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

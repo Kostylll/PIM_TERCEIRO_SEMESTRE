@@ -76,18 +76,28 @@ namespace PIM_III
 
         public void pictureBox10_Click(object sender, EventArgs e)
         {
-            UserControl1 userControl1 = new UserControl1();
-            this.Controls.Add(userControl1);
+          
+            if (!string.IsNullOrEmpty(textBox4.Text))
+            {
+               
+                string cpf = textBox4.Text;
 
-            var cpf = textBox4.Text;
+                DialogResult result = MessageBox.Show("Tem certeza que deseja deletar este colaborador?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+               
+                if (result == DialogResult.Yes)
+                {               
+                    _colaboradoresServiceSql.RemoverColaborador(cpf);
 
-            _colaboradoresServiceSql.RemoverColaborador(cpf);
-
-            Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
-
-            form2.PreencherDataGridView();
-
-            this.Parent.Controls.Remove(this);
+                    Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+                    form2?.PreencherDataGridView();
+              
+                    this.Parent.Controls.Remove(this);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, insira um CPF válido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
 
@@ -113,8 +123,9 @@ namespace PIM_III
                 Data_Nascimento = "",
             };
 
-
             _colaboradoresServiceSql.AdicionarColaborador(dadosForm);
+
+
 
             Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
 

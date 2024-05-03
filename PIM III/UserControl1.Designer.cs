@@ -204,6 +204,7 @@
             // 
             // pictureBox10
             // 
+            pictureBox10.Cursor = Cursors.Hand;
             pictureBox10.Image = Properties.Resources.delete;
             pictureBox10.Location = new Point(705, 350);
             pictureBox10.Name = "pictureBox10";

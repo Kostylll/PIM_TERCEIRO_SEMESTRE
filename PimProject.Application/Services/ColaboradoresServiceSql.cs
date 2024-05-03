@@ -176,6 +176,36 @@ namespace PimProject.Application.Services
 
             return success;
         }
+        public async Task<ColaboradoresResponse> AtualizarColaborador(ColaboradoresResponse response)
+        {
+            var cnn = "Data Source=localhost;Database=PIM_III;Trusted_Connection=True;Trust Server Certificate=true;";
+            using (SqlConnection connection = new SqlConnection(cnn))
+            {
+                await connection.OpenAsync();
+
+                string sql = "UPDATE Colaborador SET Nome_Completo = @Nome_Completo, Data_Nascimento = @Data_Nascimento, Email = @Email WHERE CPF = @CPF";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@Nome_Completo", response.Nome_Completo);
+                    command.Parameters.AddWithValue("@Data_Nascimento", response.Data_Nascimento);
+                    command.Parameters.AddWithValue("@Email", response.Email);
+              
+
+                    int rowsAffected = await command.ExecuteNonQueryAsync();
+
+                    if (rowsAffected > 0)
+                    {
+                        return response;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+        }
+
     }
 }
 
