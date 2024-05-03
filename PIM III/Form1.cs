@@ -102,5 +102,10 @@ namespace PIM_III
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

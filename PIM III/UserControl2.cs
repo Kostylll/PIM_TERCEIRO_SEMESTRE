@@ -24,21 +24,43 @@ namespace PIM_III
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-
-            this.Controls.Add(form2);
-
-            form2.Close();
 
 
+            if (Application.OpenForms["Form2"] != null)
+            {
+                Form form2 = Application.OpenForms["Form2"];
+                form2.Hide();
+            }
 
-            Form1 form = new Form1();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
 
-            this.Controls.Add(form);
+        }
 
-            form.Show();
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
 
+            if (Application.OpenForms["Form2"] != null)
+            {
+                Form form2 = Application.OpenForms["Form2"];
+                form2.Hide();
+            }
 
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+            if (Application.OpenForms["Form2"] != null)
+            {
+                Form form2 = Application.OpenForms["Form2"];
+                form2.Hide();
+            }
+
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
     }
 }

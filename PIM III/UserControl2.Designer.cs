@@ -128,6 +128,7 @@
             // pictureBox8
             // 
             pictureBox8.BackgroundImage = Properties.Resources.Screenshot_177;
+            pictureBox8.Cursor = Cursors.Hand;
             pictureBox8.Image = Properties.Resources.SairTexto;
             pictureBox8.Location = new Point(67, 109);
             pictureBox8.Name = "pictureBox8";
@@ -135,10 +136,12 @@
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 7;
             pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click;
             // 
             // pictureBox9
             // 
             pictureBox9.BackgroundImage = Properties.Resources.Screenshot_177;
+            pictureBox9.Cursor = Cursors.Hand;
             pictureBox9.Image = Properties.Resources.SairLogo;
             pictureBox9.Location = new Point(3, 109);
             pictureBox9.Name = "pictureBox9";
@@ -146,6 +149,7 @@
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox9.TabIndex = 8;
             pictureBox9.TabStop = false;
+            pictureBox9.Click += pictureBox9_Click;
             // 
             // UserControl2
             // 

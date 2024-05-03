@@ -158,7 +158,9 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "git p";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

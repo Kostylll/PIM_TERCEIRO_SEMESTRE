@@ -65,6 +65,9 @@ namespace PIM_III
             }
 
             UserControl1 userControl1 = new UserControl1();
+            
+
+
             this.Controls.Add(userControl1);
 
             int x = (this.Width - userControl1.Width) / 2;

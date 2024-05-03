@@ -76,21 +76,21 @@ namespace PIM_III
 
         public void pictureBox10_Click(object sender, EventArgs e)
         {
-          
+
             if (!string.IsNullOrEmpty(textBox4.Text))
             {
-               
+
                 string cpf = textBox4.Text;
 
                 DialogResult result = MessageBox.Show("Tem certeza que deseja deletar este colaborador?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-               
+
                 if (result == DialogResult.Yes)
-                {               
+                {
                     _colaboradoresServiceSql.RemoverColaborador(cpf);
 
                     Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
                     form2?.PreencherDataGridView();
-              
+
                     this.Parent.Controls.Remove(this);
                 }
             }
@@ -106,14 +106,14 @@ namespace PIM_III
             pictureBox10.Hide();
         }
 
-        private void pictureBox11_Click(object sender, EventArgs e)
+        public void pictureBox11_Click(object sender, EventArgs e)
         {
             UserControl1 userControl1 = new UserControl1();
             this.Controls.Add(userControl1);
 
             string nome = textBox2.Text;
             string email = textBox3.Text;
-            string cpf = textBox4.Text;
+            string cpf = FormatarCPF(textBox4.Text);
 
             var dadosForm = new ColaboradoresResponse
             {
@@ -137,6 +137,24 @@ namespace PIM_III
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public string FormatarCPF(string cpf)
+        {
+            cpf = new string(cpf.Where(char.IsDigit).ToArray());
+         
+            if (cpf.Length != 11)
+            {
+                
+                return cpf;
+            }
+
+            return $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9, 2)}";
         }
     }
 }

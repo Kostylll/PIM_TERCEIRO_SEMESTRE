@@ -185,6 +185,7 @@
             textBox4.PlaceholderText = "000.000.000-00";
             textBox4.Size = new Size(157, 23);
             textBox4.TabIndex = 12;
+            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // textBox5
             // 
