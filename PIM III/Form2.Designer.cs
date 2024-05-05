@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -43,6 +43,7 @@
             pictureBox6 = new PictureBox();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            pictureBox7 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -175,40 +177,40 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.FromArgb(163, 177, 138);
             dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(88, 129, 87);
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(218, 215, 205);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(218, 215, 205);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(218, 215, 205);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(88, 129, 87);
+            dataGridViewCellStyle5.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(218, 215, 205);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(218, 215, 205);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(218, 215, 205);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(88, 129, 87);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(88, 129, 87);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.FromArgb(163, 177, 138);
             dataGridView1.Location = new Point(3, 54);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(218, 215, 205);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(218, 215, 205);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(218, 215, 205);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(218, 215, 205);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(218, 215, 205);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(218, 215, 205);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(218, 215, 205);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(218, 215, 205);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(218, 215, 205);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(218, 215, 205);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(1285, 568);
             dataGridView1.TabIndex = 2;
@@ -218,6 +220,7 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(163, 177, 138);
+            panel2.Controls.Add(pictureBox7);
             panel2.Controls.Add(pictureBox6);
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(pictureBox4);
@@ -228,6 +231,18 @@
             panel2.Size = new Size(1291, 622);
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Cursor = Cursors.Hand;
+            pictureBox7.Image = Properties.Resources.delete;
+            pictureBox7.Location = new Point(275, 1);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(101, 47);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 3;
+            pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // Form2
             // 
@@ -251,6 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -268,5 +284,6 @@
         private PictureBox pictureBox6;
         private Panel panel2;
         public DataGridView dataGridView1;
+        private PictureBox pictureBox7;
     }
 }

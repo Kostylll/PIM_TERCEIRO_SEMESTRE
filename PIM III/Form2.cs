@@ -65,7 +65,7 @@ namespace PIM_III
             }
 
             UserControl1 userControl1 = new UserControl1();
-            
+
 
 
             this.Controls.Add(userControl1);
@@ -77,7 +77,7 @@ namespace PIM_III
             userControl1.BringToFront();
             userControl1.Show();
 
-            userControl1.EsconderBotao();
+        
 
         }
 
@@ -159,6 +159,32 @@ namespace PIM_III
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                string cpf = dataGridView1.Rows[rowIndex].Cells["CPF"].Value.ToString();
+
+                DialogResult result = MessageBox.Show("Tem certeza que deseja deletar este colaborador?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    _colaboradoresServiceSql.RemoverColaborador(cpf);
+
+                    Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+                    form2?.PreencherDataGridView();
+
+                   
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione um colaborador para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -74,37 +74,6 @@ namespace PIM_III
 
         }
 
-        public void pictureBox10_Click(object sender, EventArgs e)
-        {
-
-            if (!string.IsNullOrEmpty(textBox4.Text))
-            {
-
-                string cpf = textBox4.Text;
-
-                DialogResult result = MessageBox.Show("Tem certeza que deseja deletar este colaborador?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    _colaboradoresServiceSql.RemoverColaborador(cpf);
-
-                    Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
-                    form2?.PreencherDataGridView();
-
-                    this.Parent.Controls.Remove(this);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, insira um CPF válido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-
-        public async Task EsconderBotao()
-        {
-            pictureBox10.Hide();
-        }
 
         public void pictureBox11_Click(object sender, EventArgs e)
         {
@@ -147,10 +116,10 @@ namespace PIM_III
         public string FormatarCPF(string cpf)
         {
             cpf = new string(cpf.Where(char.IsDigit).ToArray());
-         
+
             if (cpf.Length != 11)
             {
-                
+
                 return cpf;
             }
 
