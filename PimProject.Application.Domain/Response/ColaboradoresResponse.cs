@@ -12,7 +12,7 @@ namespace PimProject.Application.Domain.Response
         public string Email { get; set; }
         public string Data_Nascimento { get; set; }
         public string CPF { get; set; }
-
-
+        public string Status { get; set; }
+        public string Telefone { get; set; }
     }
 }

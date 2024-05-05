@@ -21,7 +21,9 @@ namespace PimProject.Application.Infra.Data.Configurations
                 .ValueGeneratedNever()
                 .IsRequired();
 
-            builder.Property(x => x.Nome_Completo).HasMaxLength(128).IsRequired();          
+            builder.Property(x => x.Nome_Completo).HasMaxLength(128).IsRequired();
+            builder.Property(x => x.Status).HasMaxLength(128).IsRequired();
+            builder.Property(x => x.Telefone).HasMaxLength(20).IsRequired();
             builder.Property(x => x.Email).HasMaxLength(128).IsRequired();
             builder.Property(x => x.Data_Nascimento).HasMaxLength(128).IsRequired();
             builder.Property(x => x.CPF).HasMaxLength(128).IsRequired();

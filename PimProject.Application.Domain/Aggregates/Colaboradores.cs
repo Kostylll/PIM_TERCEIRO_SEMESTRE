@@ -14,6 +14,7 @@ namespace PimProject.Application.Domain.Aggregates
         public string Data_Nascimento { get; set; }
         public string CPF { get; set; }
         public string Status { get; set; }
+        public string Telefone { get; set; }
 
     }
 }

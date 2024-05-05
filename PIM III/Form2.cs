@@ -76,8 +76,9 @@ namespace PIM_III
 
             userControl1.BringToFront();
             userControl1.Show();
+            userControl1.EsconderBotao();
 
-        
+
 
         }
 
@@ -146,9 +147,11 @@ namespace PIM_III
                 string nome = linhaSelecionada.Cells["Nome_Completo"].Value.ToString();
                 string email = linhaSelecionada.Cells["Email"].Value.ToString();
                 string cpf = linhaSelecionada.Cells["CPF"].Value.ToString();
+                string status = linhaSelecionada.Cells["Status"].Value.ToString();
+                string telefone = linhaSelecionada.Cells["Telefone"].Value.ToString();
 
-                userControl1.SetValues(nome, email, cpf);
-
+                userControl1.SetValues(nome, email, cpf, status, telefone);
+                userControl1.LockarCpf();
             }
             else
             {
@@ -178,7 +181,7 @@ namespace PIM_III
                     Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
                     form2?.PreencherDataGridView();
 
-                   
+
                 }
             }
             else

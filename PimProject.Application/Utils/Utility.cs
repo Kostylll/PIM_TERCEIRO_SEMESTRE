@@ -8,29 +8,17 @@ namespace PimProject.Application.Utils
 {
     public static class Utility
     {
-        public static DateTime FormatStringToDateTime(string date)
+        public static string FormatarCPF(string cpf)
         {
-            try
-            {
-                if (date.Length >= 9)
-                {
-                    var year = int.Parse(date.Substring(0, 4));
-                    var month = int.Parse(date.Substring(4, 2));
-                    var day = int.Parse(date.Substring(6, 2));
-                    var dateFormated = new DateTime(year, month, day);
+            cpf = new string(cpf.Where(char.IsDigit).ToArray());
 
-                    return dateFormated;
-                }
-
-
-            }
-            catch (Exception)
+            if (cpf.Length != 10)
             {
 
-                throw;
+                return cpf;
             }
-            return new DateTime();
+
+            return $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9, 2)}";
         }
-
     }
 }

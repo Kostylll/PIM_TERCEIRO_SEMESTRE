@@ -32,7 +32,7 @@ namespace PimProject.Application.Services
 
         public async Task<bool> AdicionarColaborador(ColaboradoresResponse response)
         {
-            string sqlCommand = "INSERT INTO Colaborador (Nome_Completo, Data_Nascimento, CPF, Email) VALUES (@Nome_Completo, @Data_Nascimento, @CPF, @Email)";
+            string sqlCommand = "INSERT INTO Colaborador (Nome_Completo, Data_Nascimento, CPF, Email, Status, Telefone) VALUES (@Nome_Completo, @Data_Nascimento, @CPF, @Email, @Status, @Telefone)";
 
            
 
@@ -41,7 +41,9 @@ namespace PimProject.Application.Services
                 { "@Nome_Completo", response.Nome_Completo },
                 { "@Data_Nascimento", response.Data_Nascimento },
                 { "@CPF", response.CPF },
-                { "@Email", response.Email }
+                { "@Email", response.Email },
+                { "@Status" , response.Status },
+                { "@Telefone", response.Telefone }
 
             };
             return await AdicionarAsync(sqlCommand, parameters);
@@ -57,7 +59,7 @@ namespace PimProject.Application.Services
             {
                 await connection.OpenAsync();
 
-                string query = "SELECT CPF, Nome_Completo, DATA_NASCIMENTO, EMAIL FROM Colaborador";
+                string query = "SELECT CPF, Nome_Completo, DATA_NASCIMENTO, EMAIL, STATUS, TELEFONE FROM Colaborador";
 
                 using (var command = new SqlCommand(query, connection))
                 {
@@ -71,6 +73,8 @@ namespace PimProject.Application.Services
                             colabViewModel.Nome_Completo = reader["Nome_Completo"].ToString();
                             colabViewModel.Data_Nascimento = reader["DATA_NASCIMENTO"].ToString();
                             colabViewModel.Email = reader["EMAIL"].ToString();
+                            colabViewModel.Status = reader["STATUS"].ToString();
+                            colabViewModel.Telefone = reader["TELEFONE"].ToString();
 
                             colaboradorViewList.Add(colabViewModel);
                         }
@@ -117,7 +121,7 @@ namespace PimProject.Application.Services
             {
                 await connection.OpenAsync();
 
-                string query = "SELECT Nome_Completo, Data_Nascimento, CPF, Email FROM Colaborador WHERE Nome_Completo LIKE @searchTerm OR CPF LIKE @searchTerm OR Email LIKE @searchTerm";
+                string query = "SELECT Nome_Completo, Data_Nascimento, CPF, Email, STATUS, TELEFONE FROM Colaborador WHERE Nome_Completo LIKE @searchTerm OR CPF LIKE @searchTerm OR Email LIKE @searchTerm";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
@@ -131,6 +135,8 @@ namespace PimProject.Application.Services
                             colabViewModel.Data_Nascimento = reader["Data_Nascimento"].ToString();
                             colabViewModel.CPF = reader["CPF"].ToString();
                             colabViewModel.Email = reader["Email"].ToString();
+                            colabViewModel.Status = reader["STATUS"].ToString();
+                            colabViewModel.Telefone = reader["TELEFONE"].ToString();
 
                             resultados.Add(colabViewModel);
                         }
@@ -183,31 +189,42 @@ namespace PimProject.Application.Services
             {
                 await connection.OpenAsync();
 
-                string sql = "UPDATE Colaborador SET Nome_Completo = @Nome_Completo, Data_Nascimento = @Data_Nascimento, Email = @Email WHERE CPF = @CPF";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
+                string sql = "UPDATE Colaborador SET Nome_Completo = @Nome_Completo, Data_Nascimento = @Data_Nascimento, Email = @Email, Telefone = @Telefone, Status = @Status WHERE CPF = @CPF";
+                try
                 {
-                    command.Parameters.AddWithValue("@Nome_Completo", response.Nome_Completo);
-                    command.Parameters.AddWithValue("@Data_Nascimento", response.Data_Nascimento);
-                    command.Parameters.AddWithValue("@Email", response.Email);
-              
-
-                    int rowsAffected = await command.ExecuteNonQueryAsync();
-
-                    if (rowsAffected > 0)
+                    using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        return response;
-                    }
-                    else
-                    {
-                        return null;
+                        command.Parameters.AddWithValue("@Nome_Completo", response.Nome_Completo);
+                        command.Parameters.AddWithValue("@Data_Nascimento", response.Data_Nascimento);
+                        command.Parameters.AddWithValue("@Email", response.Email);
+                        command.Parameters.AddWithValue("@Status", response.Status);
+                        command.Parameters.AddWithValue("@CPF", response.CPF);
+                        command.Parameters.AddWithValue("@Telefone", response.Telefone);
+
+                        int rowsAffected = await command.ExecuteNonQueryAsync();
+
+                        if (rowsAffected > 0)
+                        {
+                            return response;
+                        }
+                        else
+                        {
+                            return null;
+                        }
                     }
                 }
+                catch (SqlException ex)
+                {
+
+                    Console.WriteLine($"Error removing collaborator: {ex.Message}");
+                    throw;
+                }
+            }
             }
         }
 
     }
-}
+
 
     
 
