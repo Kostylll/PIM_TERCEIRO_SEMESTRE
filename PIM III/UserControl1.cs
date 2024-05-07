@@ -221,6 +221,10 @@ namespace PIM_III
             return $"({celular.Substring(0, 2)}) {celular.Substring(2, 5)}-{celular.Substring(7, 4)}";
         }
 
+        internal void SetValues(string? venda_id, string? valor_venda, string? colaborador_cpf, string? quantidade_vendido)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

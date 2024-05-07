@@ -1,6 +1,6 @@
 ﻿namespace PIM_III
 {
-    partial class Form3
+    partial class Form4
     {
         private System.ComponentModel.IContainer components = null;
         private Panel panel1;
@@ -16,7 +16,7 @@
         private DataGridView dataGridView1;
         private PictureBox pictureBox7;
 
-        public Form3()
+        public Form4()
         {
             InitializeComponent();
         }
@@ -256,7 +256,7 @@
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new EventHandler(this.pictureBox7_Click);
             // 
-            // Form3
+            // Form4
             // 
             this.AutoScaleDimensions = new SizeF(7F, 15F);
             this.AutoScaleMode = AutoScaleMode.Font;
@@ -264,9 +264,9 @@
             this.ClientSize = new Size(1350, 729);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Name = "Form3";
-            this.Text = "Form3";
-            this.Load += new EventHandler(this.Form3_Load);
+            this.Name = "Form4";
+            this.Text = "Form4";
+            this.Load += new EventHandler(this.Form4_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

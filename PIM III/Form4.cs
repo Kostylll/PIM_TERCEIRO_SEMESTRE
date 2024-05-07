@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace PIM_III
 {
-    public partial class Form3 : Form
+    public partial class Form4 : Form
     {
         private FornecedoresServiceSql _fornecedoresServiceSql;
         private UserControl2 userControl2;
 
-        public Form3()
+        public Form4()
         {
             InitializeComponent();
             _fornecedoresServiceSql = new FornecedoresServiceSql();
@@ -29,7 +29,7 @@ namespace PIM_III
 
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Form4_Load(object sender, EventArgs e)
         {
 
         }
@@ -118,16 +118,13 @@ namespace PIM_III
                 userControl1.BringToFront();
                 DataGridViewRow linhaSelecionada = dataGridView1.SelectedRows[0];
 
-                string nome_empresa = linhaSelecionada.Cells["Nome_Empresa"].Value.ToString();
-                string email = linhaSelecionada.Cells["Email"].Value.ToString();
-                string cnpj = linhaSelecionada.Cells["CNPJ"].Value.ToString();
-                string status = linhaSelecionada.Cells["Status"].Value.ToString();
-                string telefone = linhaSelecionada.Cells["Telefone"].Value.ToString();
-                string quantidade = linhaSelecionada.Cells["Quantidade"].Value.ToString();
-                string nome_produto = linhaSelecionada.Cells["Nome_Produto"].Value.ToString();
+                string venda_id = linhaSelecionada.Cells["Venda_Id"].Value.ToString();
+                string valor_venda = linhaSelecionada.Cells["Valor_Venda"].Value.ToString();
+                string colaborador_cpf = linhaSelecionada.Cells["Colaborador_CPF"].Value.ToString();
+                string quantidade_vendido = linhaSelecionada.Cells["Quantidade_Vendido"].Value.ToString();
+ 
+                userControl1.SetValues(venda_id, valor_venda, colaborador_cpf, quantidade_vendido);
 
-                userControl1.SetValues(nome_empresa, email, cnpj, telefone, status, telefone, quantidade, nome_empresa);
-                userControl1.LockarCnpj();
             }
             else
             {
@@ -146,21 +143,21 @@ namespace PIM_III
             {
                 int rowIndex = dataGridView1.SelectedRows[0].Index;
 
-                string cnpj = dataGridView1.Rows[rowIndex].Cells["CNPJ"].Value.ToString();
+                string venda_id = dataGridView1.Rows[rowIndex].Cells["Venda_Id"].Value.ToString();
 
-                DialogResult result = MessageBox.Show("Tem certeza que deseja deletar este fornecedor?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Tem certeza que deseja deletar esta venda?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    _fornecedoresServiceSql.RemoverFornecedor(cnpj);
+                    _fornecedoresServiceSql.RemoverFornecedor(venda_id);
 
-                    Form3 form3 = Application.OpenForms.OfType<Form3>().FirstOrDefault();
-                    form3?.PreencherDataGridView();
+                    Form4 form4 = Application.OpenForms.OfType<Form4>().FirstOrDefault();
+                    form4?.PreencherDataGridView();
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, selecione um fornecedor para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, selecione uma venda para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
