@@ -13,7 +13,6 @@ namespace PimProject.Application.Domain.Aggregates
         public string Quantidade { get; set; }
         public string Valor {get; set; }
         public string Nome_Produto { get; set; }
-
         public string CPNJ { get; set; }
 
     }

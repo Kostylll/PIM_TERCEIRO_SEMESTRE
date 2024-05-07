@@ -12,5 +12,6 @@ namespace PimProject.Application.Domain.Response
         public string Quantidade { get; set; }
         public string Valor { get; set; }
         public string Nome_Produto { get; set; }
+        public string CNPJ { get; set; }
     }
 }
