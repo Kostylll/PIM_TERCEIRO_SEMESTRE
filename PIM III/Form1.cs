@@ -8,27 +8,25 @@ namespace PIM_III
     {
         private readonly ColaboradoresService _colService;
         private readonly ColaboradoresServiceSql _sqlColService;
+        private readonly LoginService _loginService;
 
         public Form1()
         {
             InitializeComponent();
             _colService = new ColaboradoresService();
+            _loginService = new LoginService();
             _sqlColService = new ColaboradoresServiceSql();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string nome = textBox1.Text;
-            string email = textBox3.Text;
-            string dataNascimento = textBox4.Text;
             string cpf = textBox5.Text;
 
 
             var dadosForm = new ColaboradoresResponse
             {
                 Nome_Completo = nome,
-                Email = email,
-                Data_Nascimento = dataNascimento,
                 CPF = cpf,
             };
 
@@ -106,6 +104,40 @@ namespace PIM_III
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public async void ExecutarLogin()
+        {
+            string login = textBox5.Text;
+            string senha = textBox1.Text;
+
+            var dadosForm = new LoginResponse
+            {
+                Login = login,
+                Senha = senha
+            };
+
+            await _loginService.ExecutarLogin(dadosForm);
+        }
+
+        private async void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+            string login = textBox5.Text;
+            string senha = textBox1.Text;
+
+            var dadosForm = new LoginResponse
+            {
+                Login = login,
+                Senha = senha
+            };
+
+            await _loginService.ExecutarLogin(dadosForm);
         }
     }
 }
