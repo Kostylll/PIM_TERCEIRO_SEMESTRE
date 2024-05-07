@@ -14,13 +14,13 @@ namespace PIM_III
 {
     public partial class Form4 : Form
     {
-        private FornecedoresServiceSql _fornecedoresServiceSql;
+        private VendasServiceSql _vendasServiceSql;
         private UserControl2 userControl2;
 
         public Form4()
         {
             InitializeComponent();
-            _fornecedoresServiceSql = new FornecedoresServiceSql();
+            _vendasServiceSql = new VendasServiceSql();
             PreencherDataGridView();
         }
 
@@ -41,8 +41,8 @@ namespace PIM_III
 
         public async Task PreencherDataGridView()
         {
-            List<FornecedoresResponse> fornecedores = await _fornecedoresServiceSql.ExibirFornecedores();
-            BindingList<FornecedoresResponse> bindingList = new BindingList<FornecedoresResponse>(fornecedores);
+            List<VendasResponse> vendas = await _vendasServiceSql.ExibirVendas();
+            BindingList<VendasResponse> bindingList = new BindingList<VendasResponse>(vendas);
             dataGridView1.DataSource = bindingList;
         }
 
@@ -89,7 +89,7 @@ namespace PIM_III
         {
             //FUNÇÃO LUPINHA
             string searchTerm = textBox1.Text;
-            List<FornecedoresResponse> resultados = await _fornecedoresServiceSql.PesquisarFornecedores(searchTerm);
+            List<VendasResponse> resultados = await _vendasServiceSql.PesquisarVendas(searchTerm);
             dataGridView1.DataSource = resultados;
         }
 
@@ -149,7 +149,7 @@ namespace PIM_III
 
                 if (result == DialogResult.Yes)
                 {
-                    _fornecedoresServiceSql.RemoverFornecedor(venda_id);
+                    _vendasServiceSql.RemoverFornecedor(venda_id);
 
                     Form4 form4 = Application.OpenForms.OfType<Form4>().FirstOrDefault();
                     form4?.PreencherDataGridView();
