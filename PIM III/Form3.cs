@@ -14,13 +14,13 @@ namespace PIM_III
 {
     public partial class Form3 : Form
     {
-        private FornecedoresServiceSql _fornecedoresServiceSql;
+        private FornecedoresService _fornecedoresService;
         private UserControl2 userControl2;
 
         public Form3()
         {
             InitializeComponent();
-            _fornecedoresServiceSql = new FornecedoresServiceSql();
+            _fornecedoresService = new FornecedoresService();
             PreencherDataGridView();
         }
 
@@ -41,7 +41,7 @@ namespace PIM_III
 
         public async Task PreencherDataGridView()
         {
-            List<FornecedoresResponse> fornecedores = await _fornecedoresServiceSql.ExibirFornecedores();
+            List<FornecedoresResponse> fornecedores = await _fornecedoresService.ExibirFornecedores();
             BindingList<FornecedoresResponse> bindingList = new BindingList<FornecedoresResponse>(fornecedores);
             dataGridView1.DataSource = bindingList;
         }
@@ -89,8 +89,8 @@ namespace PIM_III
         {
             //FUNÇÃO LUPINHA
             string searchTerm = textBox1.Text;
-            List<FornecedoresResponse> resultados = await _fornecedoresServiceSql.PesquisarFornecedores(searchTerm);
-            dataGridView1.DataSource = resultados;
+            //List<FornecedoresResponse> resultados = await _fornecedoresService.PesquisarFornecedores(searchTerm);
+            //dataGridView1.DataSource = resultados;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -126,8 +126,8 @@ namespace PIM_III
                 string quantidade = linhaSelecionada.Cells["Quantidade"].Value.ToString();
                 string nome_produto = linhaSelecionada.Cells["Nome_Produto"].Value.ToString();
 
-                userControl1.SetValues(nome_empresa, email, cnpj, telefone, status, telefone, quantidade, nome_empresa);
-                userControl1.LockarCnpj();
+                //userControl1.SetValues(nome_empresa, email, cnpj, telefone, status, telefone, quantidade, nome_empresa);
+                //userControl1.LockarCnpj();
             }
             else
             {
@@ -152,7 +152,7 @@ namespace PIM_III
 
                 if (result == DialogResult.Yes)
                 {
-                    _fornecedoresServiceSql.RemoverFornecedor(cnpj);
+                    _fornecedoresService.RemoverFornecedor(cnpj);
 
                     Form3 form3 = Application.OpenForms.OfType<Form3>().FirstOrDefault();
                     form3?.PreencherDataGridView();

@@ -9,6 +9,6 @@ namespace PimProject.Application.Domain.Response
     public class ProducoesResponse
     {
         public string produto_id {  get; set; }
-        public string produto_pro { get; set; }
+        public string produto_produzido { get; set; }
     }
 }

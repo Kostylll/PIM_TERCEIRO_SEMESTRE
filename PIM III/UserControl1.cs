@@ -14,11 +14,11 @@ namespace PIM_III
 {
     public partial class UserControl1 : UserControl
     {
-        private readonly ColaboradoresServiceSql _colaboradoresServiceSql;
+        private readonly ColaboradoresService _colaboradoresServiceSql;
         public UserControl1()
         {
             InitializeComponent();
-            _colaboradoresServiceSql = new ColaboradoresServiceSql();
+            _colaboradoresServiceSql = new ColaboradoresService();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -131,6 +131,8 @@ namespace PIM_III
             pictureBox4.Hide();
 
         }
+
+
 
         public void LockarCpf()
         {

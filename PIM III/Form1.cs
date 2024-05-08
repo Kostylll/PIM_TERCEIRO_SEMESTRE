@@ -6,35 +6,19 @@ namespace PIM_III
 {
     public partial class Form1 : Form
     {
-        private readonly ColaboradoresService _colService;
-        private readonly ColaboradoresServiceSql _sqlColService;
+      
+        private readonly ColaboradoresService _cobService;
         private readonly LoginService _loginService;
 
         public Form1()
         {
             InitializeComponent();
-            _colService = new ColaboradoresService();
+            _cobService = new ColaboradoresService();
             _loginService = new LoginService();
-            _sqlColService = new ColaboradoresServiceSql();
+          
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string nome = textBox1.Text;
-            string cpf = textBox5.Text;
-
-
-            var dadosForm = new ColaboradoresResponse
-            {
-                Nome_Completo = nome,
-                CPF = cpf,
-            };
-
-            _sqlColService.AdicionarColaborador(dadosForm);
-
-
-
-        }
+     
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

@@ -14,13 +14,13 @@ namespace PIM_III
 {
     public partial class Form4 : Form
     {
-        private VendasServiceSql _vendasServiceSql;
+        private VendasService _vendasServiceSql;
         private UserControl2 userControl2;
 
         public Form4()
         {
             InitializeComponent();
-            _vendasServiceSql = new VendasServiceSql();
+            _vendasServiceSql = new VendasService();
             PreencherDataGridView();
         }
 
@@ -85,13 +85,7 @@ namespace PIM_III
             }
         }
 
-        private async void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            //FUNÇÃO LUPINHA
-            string searchTerm = textBox1.Text;
-            List<VendasResponse> resultados = await _vendasServiceSql.PesquisarVendas(searchTerm);
-            dataGridView1.DataSource = resultados;
-        }
+      
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -122,7 +116,7 @@ namespace PIM_III
                 string valor_venda = linhaSelecionada.Cells["Valor_Venda"].Value.ToString();
                 string colaborador_cpf = linhaSelecionada.Cells["Colaborador_CPF"].Value.ToString();
                 string quantidade_vendido = linhaSelecionada.Cells["Quantidade_Vendido"].Value.ToString();
- 
+
                 userControl1.SetValues(venda_id, valor_venda, colaborador_cpf, quantidade_vendido);
 
             }
@@ -149,7 +143,7 @@ namespace PIM_III
 
                 if (result == DialogResult.Yes)
                 {
-                    _vendasServiceSql.RemoverFornecedor(venda_id);
+                    _vendasServiceSql.RemoverVenda(venda_id);
 
                     Form4 form4 = Application.OpenForms.OfType<Form4>().FirstOrDefault();
                     form4?.PreencherDataGridView();

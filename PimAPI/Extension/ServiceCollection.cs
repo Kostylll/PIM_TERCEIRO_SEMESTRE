@@ -18,7 +18,7 @@ namespace PimAPI.Extension
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddScoped<IColaboradoresServices, ColaboradoresService>();
+           
             services.AddScoped<IFornecedoresServices, FornecedoresService>();
             services.AddScoped<IProduçãoServices, ProduçãoService>();
             services.AddScoped<IVendasServices, VendasService>();

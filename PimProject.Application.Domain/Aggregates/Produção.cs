@@ -10,7 +10,7 @@ namespace PimProject.Application.Domain.Aggregates
     public class Produção : Entity
     {
         public string produto_id { get; set; }
-        public string produto_pro {  get; set; }
+        public string produto_produzido {  get; set; }
 
 
 

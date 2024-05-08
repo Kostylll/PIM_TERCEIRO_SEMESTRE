@@ -30,7 +30,7 @@ namespace PimProject.Application.Services
         {
             var prod = new Produção()
             {
-                produto_pro = response.produto_pro,
+                produto_produzido = response.produto_produzido,
             };
 
             await _proRepository.AddAsync(prod);
@@ -50,7 +50,7 @@ namespace PimProject.Application.Services
             {
                 var prodViewModel = new ProducoesResponse();
 
-                prodViewModel.produto_pro = prods.produto_pro;
+                prodViewModel.produto_produzido = prods.produto_produzido;
 
                 produViewList.Add(prodViewModel);
 
@@ -74,7 +74,7 @@ namespace PimProject.Application.Services
 
             if (prod != null)
             {
-                prod.produto_pro = response.produto_pro;
+                prod.produto_produzido = response.produto_produzido;
 
                 _proRepository.Update(prod);
                 await _proRepository.SaveChangesAsync();

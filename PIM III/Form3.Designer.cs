@@ -16,10 +16,7 @@
         private DataGridView dataGridView1;
         private PictureBox pictureBox7;
 
-        public Form3()
-        {
-            InitializeComponent();
-        }
+     
 
         protected override void Dispose(bool disposing)
         {

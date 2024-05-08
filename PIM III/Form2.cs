@@ -14,12 +14,12 @@ namespace PIM_III
 {
     public partial class Form2 : Form
     {
-        private ColaboradoresServiceSql _colaboradoresServiceSql;
+        private ColaboradoresService _cobService;
         private UserControl2 userControl2;
         public Form2()
         {
             InitializeComponent();
-            _colaboradoresServiceSql = new ColaboradoresServiceSql();
+            _cobService = new ColaboradoresService();
             PreencherDataGridView();
 
 
@@ -44,7 +44,7 @@ namespace PIM_III
         }
         public async Task PreencherDataGridView()
         {
-            List<ColaboradoresResponse> colaboradores = await _colaboradoresServiceSql.ExibirColaboradores();
+            List<ColaboradoresResponse> colaboradores = await _cobService.ExibirColaboradores();
 
 
             BindingList<ColaboradoresResponse> bindingList = new BindingList<ColaboradoresResponse>(colaboradores);
@@ -113,7 +113,7 @@ namespace PIM_III
         {
             //FUNÇÃO LUPINHA
             string searchTerm = textBox1.Text;
-            List<ColaboradoresResponse> resultados = await _colaboradoresServiceSql.PesquisarColaboradores(searchTerm);
+            List<ColaboradoresResponse> resultados = await _cobService.PesquisarColaboradores(searchTerm);
             dataGridView1.DataSource = resultados;
         }
 
@@ -176,7 +176,7 @@ namespace PIM_III
 
                 if (result == DialogResult.Yes)
                 {
-                    _colaboradoresServiceSql.RemoverColaborador(cpf);
+                    _cobService.RemoverColaborador(cpf);
 
                     Form2 form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
                     form2?.PreencherDataGridView();
